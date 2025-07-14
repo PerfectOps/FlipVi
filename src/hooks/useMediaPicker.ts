@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { launchImageLibrary } from "react-native-image-picker";
 
 export const useMediaPicker = () => {
-    const openGallery = useCallback((
+    const openGallery = (
         mediaType: 'mixed' | 'video' | 'photo',
         onSuccess: (uri: string) => void
     ) => {
@@ -17,7 +17,7 @@ export const useMediaPicker = () => {
                 onSuccess(imageUri);
             }
         });
-    }, []);
+    };
   
     return { openGallery };
 };
